@@ -36,7 +36,7 @@ function install-prereq {
 
     # Install Mininet
     cd --
-    git clone git://github.com/mininet/mininet
+    git clone https://github.com/mininet/mininet
     sudo mininet/util/install.sh -a
 }
 
