@@ -33,6 +33,11 @@ function install-prereq {
     chmod +x bazel-0.23.2-installer-linux-x86_64.sh
     ./bazel-0.23.2-installer-linux-x86_64.sh --user
     echo "export PATH=\"$PATH:$HOME/bin\"" >> ~/.sfile
+
+    # Install Mininet
+    cd --
+    git clone git://github.com/mininet/mininet
+    sudo mininet/util/install.sh -a
 }
 
 function download-onos {
