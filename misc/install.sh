@@ -39,6 +39,7 @@ function install-prereq {
 function download-onos {
     # Download ONOS
     cd --
+    export GIT_SSL_NO_VERIFY=1
     git clone https://gerrit.onosproject.org/onos
     cd onos
     git reset --hard 3bc7060466c0d0da72799455ac2eb44048e1bd3d
@@ -58,8 +59,11 @@ function download-onos-opa {
     git clone https://github.com/ANTLab-polimi/onos-opa-example.git
     cd onos-opa-example
     export LC_ALL=C
-    sudo pip install -r requirements.txt
-
+    # sudo pip install -r requirements.txt
+    python -m pip install -U pip
+    python -m pip install -U matplotlib
+    pip install networkx
+    
     # Patching IMR to submit PointToPointIntent with suggested paths
     cd $ONOS_ROOT
     git apply ../onos-opa-example/misc/imr-submits-p2pintent-suggested-path.patch
