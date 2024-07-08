@@ -60,6 +60,7 @@ function download-onos-opa {
     cd onos-opa-example
     export LC_ALL=C
     # sudo pip install -r requirements.txt
+    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py | python
     python -m pip install -U pip
     python -m pip install -U matplotlib
     pip install networkx
